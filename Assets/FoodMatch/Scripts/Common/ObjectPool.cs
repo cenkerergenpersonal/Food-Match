@@ -1,25 +1,35 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace FoodMatch.Scripts.Common{
     public class ObjectPool<T> where T : MonoBehaviour
     {
-        private Queue<T> _pool;
-        private T _prefab;
-        private Transform _parent;
+        private readonly Queue<T> _pool = new Queue<T>();
+        private readonly DiContainer _container;
+        private readonly string _address;
+        private readonly Transform _parent;
+        private readonly GameObject _prefab;
+        private readonly int _initialSize;
 
-        public ObjectPool(T prefab, int initialSize, Transform parent)
+        public ObjectPool(DiContainer container, GameObject prefab, int initialSize, Transform parent)
         {
+            _container = container;
             _prefab = prefab;
+            _initialSize = initialSize;
             _parent = parent;
-            _pool = new Queue<T>(initialSize);
 
-            for (int i = 0; i < initialSize; i++)
+            for (int i = 0; i < _initialSize; i++)
             {
-                T obj = Object.Instantiate(_prefab, _parent);
-                obj.gameObject.SetActive(false);
-                _pool.Enqueue(obj);
+                CreateNewInstance();
             }
+        }
+
+        private void CreateNewInstance()
+        {
+            T obj = _container.InstantiatePrefab(_prefab, _parent).GetComponent<T>();
+            obj.gameObject.SetActive(false);
+            _pool.Enqueue(obj);
         }
 
         public T Get()
@@ -32,7 +42,7 @@ namespace FoodMatch.Scripts.Common{
             }
             else
             {
-                T obj = Object.Instantiate(_prefab, _parent);
+                T obj = _container.InstantiatePrefab(_prefab, _parent).GetComponent<T>();
                 return obj;
             }
         }
