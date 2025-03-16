@@ -5,19 +5,17 @@ namespace FoodMatch.Scripts.Common
 {
     public class EventBus
     {
-        private static readonly Dictionary<Type,  List<IEvent>> Events = new();
+        private static readonly Dictionary<Type, List<Delegate>> Events = new();
 
         public static void Subscribe<T>(Action<T> subscriber) where T : class, IEvent
         {
             Type eventType = typeof(T);
             if (!Events.ContainsKey(eventType))
             {
-                Events[eventType] =new List<IEvent>();
+                Events[eventType] = new List<Delegate>();
             }
-            else
-            {
-                Events[eventType].Add(subscriber as IEvent);
-            }
+
+            Events[eventType].Add(subscriber);
         }
 
         public static void Unsubscribe<T>(Action<T> subscriber) where T : class, IEvent
@@ -26,7 +24,7 @@ namespace FoodMatch.Scripts.Common
 
             if (Events.TryGetValue(eventType, out var delegates))
             {
-                delegates.Remove(subscriber as IEvent);
+                delegates.Remove(subscriber);
 
                 if (delegates.Count == 0)
                 {
@@ -35,18 +33,20 @@ namespace FoodMatch.Scripts.Common
             }
         }
 
-        public static void Publish<T>(T data) where T : class
+        public static void Publish<T>(T data) where T : class, IEvent
         {
             Type eventType = typeof(T);
 
-            if (Events.TryGetValue(eventType, out var events))
+            if (!Events.ContainsKey(eventType))
             {
-                foreach (var del in events)
+                return;
+            }
+            
+            foreach (var del in Events[eventType])
+            {
+                if (del is Action<T> action)
                 {
-                    if (del is Action<T> action)
-                    {
-                        action.Invoke(data);
-                    }
+                    action.Invoke(data);
                 }
             }
         }
