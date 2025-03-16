@@ -4,6 +4,7 @@ namespace FoodMatch.Scripts.Game.Factory
 {
     public interface IItemFactory
     {
-        UniTask<ItemBase> CreateItem();
+        UniTask<Item> CreateItem(int setId,int itemId);
+        void Remove(Item item);
     }
 }
