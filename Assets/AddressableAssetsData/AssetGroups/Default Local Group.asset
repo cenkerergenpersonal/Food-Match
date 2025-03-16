@@ -14,18 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: 1996b672335d744b28f2cabbf2f96c6b
-  m_SerializeEntries:
-  - m_GUID: 2bae61838cd6845f09edda3d7285b767
-    m_Address: Assets/FoodMatch/ThirdParty
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c3122dd86e58644aebc6acb06bb431f9
-    m_Address: Assets/FoodMatch/Prefabs/Item.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Item
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: db8086244b57147e3aff4c015c7a1e35, type: 2}
   m_SchemaSet:
