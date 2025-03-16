@@ -1,14 +1,9 @@
-[Bb]uilds/
-[Bb]uild/
-[Bb]uilds_*/
-
 *.unitypackage
 
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
-[Bb]uilds/
 [Ll]ogs/
 MemoryCaptures/
 
@@ -34,7 +29,6 @@ UserSettings/
 Thumbs.db
 
 .gradle/
-*.apk
 *.aab
 *.ipa
 
