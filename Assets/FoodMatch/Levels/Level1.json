@@ -1,0 +1,22 @@
+{
+    "LevelId": 0,
+    "TotalItemCount": 45,
+    "TotalTimeFromSeconds": 20,
+    "Goals": [
+        {
+            "ItemSet": 2,
+            "itemType": 0,
+            "requiredCount": 3
+        },
+        {
+            "ItemSet": 2,
+            "itemType": 1,
+            "requiredCount": 3
+        },
+        {
+            "ItemSet": 2,
+            "itemType": 2,
+            "requiredCount": 3
+        }
+    ]
+}
