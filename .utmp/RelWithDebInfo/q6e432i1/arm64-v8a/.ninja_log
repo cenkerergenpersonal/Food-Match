@@ -1,0 +1,10 @@
+# ninja log v5
+3	3057	1742155884769723458	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	ee9fbee4c2b5a5ac
+2	3067	1742155884776514143	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	e052b328dad6f463
+0	3112	1742155884824355725	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3a70bfe315e1a8e5
+4	3160	1742155884872968092	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	bf143135a1fc47d6
+4	3272	1742155884978035041	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	9c36a9497b93ec57
+1	3297	1742155885009154492	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	7252619c6df83df5
+2	3767	1742155885484226597	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f439f74feae60e9
+0	3976	1742155885695485943	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	db83600c0c08c3dc
+3976	4203	1742155885923896583	/Users/cenkerergen/Desktop/Repo/Food-Match/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/q6e432i1/obj/arm64-v8a/libgame.so	3f642139f1a230f7
